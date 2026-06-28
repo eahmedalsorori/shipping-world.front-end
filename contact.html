@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sina|Contact</title>
+    <!-- تضمين Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- تضمين خط Tajawal من جوجل -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
+    <!-- استدعاء مكتبة FontAwesome بالرابط المستقر -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css" />
+    
+    <style>
+        body {
+            font-family: 'Tajawal', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- 1. الهيدر والقائمة العلوية (Navbar) -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <!-- الشعار -->
+            <a href="index.html" class="text-2xl font-bold text-blue-600 flex items-center gap-2">
+                <i class="fa-solid fa-ship text-orange-500"></i>
+                <span> عالم<span class="text-gray-800"> الشحن </span></span>
+            </a>
+            
+            <!-- القائمة للشاشات الكبيرة -->
+            <nav class="hidden md:flex space-x-reverse space-x-8 font-medium">
+                <a href="index.html" class="text-gray-600 hover:text-blue-600 transition">الرئيسية</a>
+                <a href="services.html" class="text-gray-600 hover:text-blue-600 transition">الخدمات</a>
+                <a href="careers.html" class="text-gray-600 hover:text-blue-600 transition">الوظائف </a>
+                <a href="about.html" class="text-gray-600 hover:text-blue-600 transition">من نحن</a>
+                <a href="contact.html" class="text-blue-600 border-b-2 border-blue-600 pb-1">تواصل معنا</a>
+            </nav>
+
+ <!-- أزرار التحكم -->
+            <div class="hidden md:flex items-center gap-4">
+            <a href="#" class="block text-center bg-blue-600 text-white px-5 py-2 rounded-lg font-medium"><i class="fa-solid fa-user-plus"></i>   حساب جديد</a>
+            <a href="#" class="block text-center bg-blue-600 text-white px-5 py-2 rounded-lg font-medium"><i class="fa-solid fa-arrow-right-to-bracket"></i>  تسجيل دخول</a>   
+                 </div>
+
+            <button class="md:hidden text-gray-600 text-2xl focus:outline-none" id="menu-btn">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+        
+        <!-- القائمة للهواتف -->
+        <div class="hidden md:hidden bg-white border-t border-gray-100 px-4 py-4 space-y-3" id="mobile-menu">
+            <a href="index.html" class="block text-gray-600 hover:text-blue-600">الرئيسية</a>
+            <a href="services.html" class="block text-gray-600 hover:text-blue-600">الخدمات</a>
+            <a href="careers.html" class="block text-gray-600 hover:text-blue-600">الوظائف المتاحة</a>
+            <a href="about.html" class="block text-gray-600 hover:text-blue-600">من نحن</a>
+            <a href="contact.html" class="block text-blue-600 font-medium">تواصل معنا</a>
+            <hr class="border-gray-100">
+              <a href="#" class="block text-center bg-blue-600 text-white px-5 py-2 rounded-lg font-medium"><i class="fa-solid fa-user-plus"></i>   حساب جديد</a>
+            <a href="#" class="block text-center bg-blue-600 text-white px-5 py-2 rounded-lg font-medium"><i class="fa-solid fa-arrow-right-to-bracket"></i>  تسجيل دخول</a>          
+          <!-- </div> -->
+        </div>
+    </header>
+
+    <!-- 2. عنوان الصفحة (Hero Section) -->
+    <section class="bg-gradient-to-r from-blue-900 to-blue-700 text-white py-16 text-center relative overflow-hidden">
+        <div class="absolute inset-0 opacity-10 bg-[url('https://images.unsplash.com/photo-1534536281715-e28d76689b4d?q=80&w=1200')] bg-cover bg-center"></div>
+        <div class="container mx-auto px-4 relative z-10 space-y-3">
+            <h1 class="text-3xl md:text-4xl font-bold">يسعدنا تواصلك معنا</h1>
+            <p class="text-blue-200 text-sm md:text-base max-w-xl mx-auto">
+                هل لديك استفسار عن خدمات الشحن أو تقديم الوظائف؟ فريق الدعم الفني جاهز للرد عليك ومساعدتك.
+            </p>
+        </div>
+    </section>
+
+    <!-- 3. محتوى التواصل (استمارة + معلومات الاتصال) -->
+    <main class="container mx-auto px-4 py-12 max-w-5xl">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+            
+            <!-- الجانب الأيمن: استمارة تواصل معنا (7 Columns) -->
+            <div class="lg:col-span-7 bg-white p-6 md:p-8 rounded-2xl border border-gray-100 shadow-sm space-y-6">
+                <div>
+                    <h2 class="text-xl font-bold text-gray-900">أرسل لنا رسالة مباشرة</h2>
+                    <p class="text-xs text-gray-500 mt-1">قم بتعبئة الحقول التالية وسيتواصل معك القسم المختص في أقرب وقت.</p>
+                </div>
+
+                <form class="space-y-4" onsubmit="alert('تم استلام رسالتك بنجاح! شكراً لتواصلك معنا.'); event.preventDefault();">
+                    
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <!-- الاسم -->
+                        <div>
+                            <label class="block text-xs font-bold text-gray-700 mb-1">الاسم بالكامل *</label>
+                            <input type="text" required class="w-full bg-gray-50 border border-gray-200 rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:border-blue-500 transition" placeholder="أحمد عبد الله">
+                        </div>
+                        <!-- رقم الهاتف -->
+                        <div>
+                            <label class="block text-xs font-bold text-gray-700 mb-1">رقم الهاتف *</label>
+                            <input type="tel" required class="w-full bg-gray-50 border border-gray-200 rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:border-blue-500 transition text-left" placeholder="05XXXXXXXX" dir="ltr">
+                        </div>
+                    </div>
+
+                    <!-- البريد الإلكتروني -->
+                    <div>
+                        <label class="block text-xs font-bold text-gray-700 mb-1">البريد الإلكتروني *</label>
+                        <input type="email" required class="w-full bg-gray-50 border border-gray-200 rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:border-blue-500 transition text-left" placeholder="example@gmail.com" dir="ltr">
+                    </div>
+
+                    <!-- نوع الاستفسار -->
+                    <div>
+                        <label class="block text-xs font-bold text-gray-700 mb-1">نوع الاستفسار أو الطلب *</label>
+                        <select required class="w-full bg-gray-50 border border-gray-200 rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:border-blue-500 transition appearance-none">
+                            <option value="">اختر القسم المختص...</option>
+                            <option value="shipping">استفسار عن خدمات الشراء والوساطة</option>
+                            <option value="careers">استفسار بخصوص الوظائف والشراكات</option>
+                            <option value="complaints">تقديم شكوى / اقتراح</option>
+                            <option value="other">أخرى</option>
+                        </select>
+                    </div>
+
+                    <!-- نص الرسالة -->
+                    <div>
+                        <label class="block text-xs font-bold text-gray-700 mb-1">نص الرسالة *</label>
+                        <textarea required rows="4" class="w-full bg-gray-50 border border-gray-200 rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:border-blue-500 transition resize-none" placeholder="اكتب تفاصيل استفسارك هنا..."></textarea>
+                    </div>
+
+                    <!-- زر الإرسال -->
+                    <button type="submit" class="w-full sm:w-auto bg-blue-600 hover:bg-blue-700 text-white font-bold px-8 py-3 rounded-xl transition shadow-md flex items-center justify-center gap-2 text-sm">
+                        <i class="fa-solid fa-paper-plane"></i>
+                        <span>إرسال الاستفسار</span>
+                    </button>
+                </form>
+            </div>
+
+            <!-- الجانب الأيسر: معلومات الاتصال السريعة (5 Columns) -->
+            <div class="lg:col-span-5 space-y-4">
+                
+                <!-- بطاقة الهاتف -->
+                <div class="bg-white p-5 rounded-2xl border border-gray-100 shadow-sm flex items-start gap-4">
+                    <div class="w-10 h-10 bg-blue-50 text-blue-600 rounded-xl flex items-center justify-center text-lg shrink-0">
+                        <i class="fa-solid fa-phone"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-gray-900 text-sm md:text-base">الرقم الموحد والدعم</h3>
+                        <p class="text-gray-500 text-xs mt-0.5">متاحون للرد على اتصالاتكم</p>
+                        <p class="text-blue-600 font-bold text-sm mt-2" dir="ltr">92000XXXX</p>
+                    </div>
+                </div>
+
+                <!-- بطاقة البريد الإلكتروني -->
+                <div class="bg-white p-5 rounded-2xl border border-gray-100 shadow-sm flex items-start gap-4">
+                    <div class="w-10 h-10 bg-orange-50 text-orange-600 rounded-xl flex items-center justify-center text-lg shrink-0">
+                        <i class="fa-solid fa-envelope"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-gray-900 text-sm md:text-base">البريد الإلكتروني الرسمي</h3>
+                        <p class="text-gray-500 text-xs mt-0.5">للمراسلات العامة والمعاملات والتوظيف</p>
+                        <p class="text-orange-600 font-medium text-sm mt-2" dir="ltr">support@shippingworld.com</p>
+                    </div>
+                </div>
+
+                <!-- بطاقة الموقع الجغرافي -->
+                <div class="bg-white p-5 rounded-2xl border border-gray-100 shadow-sm flex items-start gap-4">
+                    <div class="w-10 h-10 bg-emerald-50 text-emerald-600 rounded-xl flex items-center justify-center text-lg shrink-0">
+                        <i class="fa-solid fa-location-dot"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-gray-900 text-sm md:text-base">المقر الرئيسي</h3>
+                        <p class="text-gray-500 text-xs mt-0.5">الامارات العربية المتحدة</p>
+                        <p class="text-gray-700 text-xs mt-2"> الشارقة شارع مليحة  مبنى الشركة رقم 975241</p>
+                    </div>
+                </div>
+
+                <!-- بطاقة أوقات العمل -->
+                <div class="bg-white p-5 rounded-2xl border border-gray-100 shadow-sm flex items-start gap-4">
+                    <div class="w-10 h-10 bg-purple-50 text-purple-600 rounded-xl flex items-center justify-center text-lg shrink-0">
+                        <i class="fa-solid fa-clock"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-gray-900 text-sm md:text-base">أوقات العمل الرسمية</h3>
+                        <p class="text-gray-500 text-xs mt-0.5">من الأحد إلى الخميس</p>
+                        <p class="text-gray-700 text-xs mt-2">من الساعة 8:00 صباحاً وحتى 4:00 مساءً</p>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </main>
+
+    <!-- 4. تذييل الصفحة (Footer) -->
+    <footer class="bg-gray-900 text-gray-400 py-12 border-t border-gray-800">
+        <div class="container mx-auto px-4 max-w-5xl grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="space-y-4">
+                <a href="#" class="text-2xl font-bold text-white flex items-center gap-2">
+                    <i class="fa-solid fa-ship text-orange-500"></i>
+                    <span> عالم <span class="text-blue-400"> الشحن  </span></span>
+                </a>
+                <p class="text-sm leading-relaxed">
+                    منصتك الأولى للوساطة في الشراء من المتاجر العالمية والشحن الدولي والمحلي، والشريك المعتمد لعرض الفرص الوظيفية للقطاعات العامة والخاصة.
+                </p>
+            </div>
+            <div class="space-y-3">
+                <h4 class="text-white font-bold text-lg">روابط سريعة</h4>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="index.html" class="hover:text-white transition">الرئيسية</a></li>
+                    <li><a href="services.html" class="hover:text-white transition">الخدمات العالمية</a></li>
+                    <li><a href="careers.html" class="hover:text-white transition">الوظائف</a></li>
+                    <li><a href="about.html" class="hover:text-white transition">من نحن</a></li>
+                    <li><a href="contact.html" class="hover:text-white transition">من نحن</a></li>
+                </ul>
+            </div>
+          <!-- معلومات التواصل والدعم الفني -->
+            <div class="space-y-3">
+                <h4 class="text-white font-bold text-lg">اتصل بنا</h4>
+                <p class="text-sm">لديك استفسار؟ فريقنا في خدمتك على مدار الساعة.</p>
+                <p class="text-white font-medium text-sm flex items-center gap-2">
+                    <i class="fa-solid fa-phone text-orange-500"></i> <span>92000XXXX</span>
+                    <i class="fa-solid fa-brands fa-whatsapp text-orange-500"></i> <span>92000XXXX</span>
+                </p>
+                <div class="flex gap-4 pt-2 text-lg">
+                    <ul class="space-y-2 text-sm">
+                    <li><a href="#" class="hover:text-white transition ">  user@twitter.com <i class="fa-brands fa-twitter text-orange-600 "></i></a></li>
+                    <li><a href="#" class="hover:text-white transition">   user@linkedin.com <i class="fa-brands fa-linkedin text-orange-600"></i></a></li>
+                    <li><a href="#" class="hover:text-white transition">   user@instagram.com <i class="fa-brands fa-instagram text-orange-600"></i></a></li>
+                    <li><a href="#" class="hover:text-white transition">   user@Facebook.com<i class="fa-brands fa-facebook text-orange-600"></i></a></li>
+                    <li><a href="#" class="hover:text-white transition">   user@gmail.com<i class="fa-solid fa-square-envelope text-orange-600"></i></a></li>
+                </ul>        
+                </div>
+            </div>
+        <div class="container mx-auto px-4 mt-12 pt-6 border-t border-gray-800 text-center text-xs">
+            <p>جميع الحقوق محفوظة © 2026 عالم الشحن.</p>
+        </div>
+    </footer>
+
+    <!-- جافاسكريبت القائمة المتجاوبة للهواتف -->
+    <script>
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>

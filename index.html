@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>عالم الشحن | لوساط  الشراء والشحن الدولي والتوظيف المعتمد</title>
+    <!-- تضمين Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- تضمين خط Tajawal من جوجل -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
+    <!-- تضمين مكتب  الأيقونات FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        body {
+            font-family: 'Tajawal', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- 1. الهيدر والقائم  العلوي  (Navbar) -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <!-- الشعار -->
+            <a href="index.html" class="text-2xl font-bold text-blue-600 flex items-center gap-2">
+                <i class="fa-solid fa-ship text-orange-500"></i>
+                <span>عالم<span class="text-gray-800">الشحن</span></span>
+            </a>
+            
+            <!-- القائم  للشاشات الكبير  -->
+            <nav class="hidden md:flex space-x-reverse space-x-8 font-medium">
+                <a href="index.html" class="text-blue-600 border-b-2 border-blue-600 pb-1">الرئيسية</a>
+                <a href="#" class="text-gray-600 hover:text-blue-600 transition">الخدمات</a>
+                <a href="#" class="text-gray-600 hover:text-blue-600 transition">الوظائف المتاحة</a>
+                <a href="#" class="text-gray-600 hover:text-blue-600 transition">من نحن</a>
+                <a href="#" class="text-gray-600 hover:text-blue-600 transition">تواصل معنا</a>
+            </nav>
+
+            <!-- أزرار التحكم والعمليات -->
+            <div class="hidden md:flex items-center gap-4">
+                <a href="#" class="bg-blue-600 text-white px-5 py-2 rounded-lg font-medium hover:bg-blue-700 transition shadow-sm">حساب جديد</a>
+            </div>
+
+            <!-- زر القائم  للهواتف الذكي  -->
+            <button class="md:hidden text-gray-600 text-2xl focus:outline-none" id="menu-btn">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+        
+        <!-- القائم  الجانبي  للهواتف (تظهر وتختفي عبر الجافاسكريبت بالأسفل) -->
+        <div class="hidden md:hidden bg-white border-t border-gray-100 px-4 py-4 space-y-3" id="mobile-menu">
+            <a href="index.html" class="block text-blue-600 font-medium">الرئيسية</a>
+            <a href="#" class="block text-gray-600 hover:text-blue-600">الخدمات</a>
+            <a href="#" class="block text-gray-600 hover:text-blue-600">الوظائف المتاحة</a>
+            <a href="#" class="block text-gray-600 hover:text-blue-600">من نحن</a>
+            <a href="#" class="block text-gray-600 hover:text-blue-600">تواصل معنا</a>
+            <hr class="border-gray-100">
+            <a href="#" class="block text-center bg-blue-600 text-white px-5 py-2 rounded-lg font-medium">حساب جديد</a>
+        </div>
+    </header>
+
+    <!-- 2. قسم البطل الـ Hero Section -->
+    <section class="relative bg-gradient-to-r from-blue-900 to-blue-700 text-white overflow-hidden py-20 lg:py-32">
+        <!-- خلفي  جمالي  خفيف  للشحن -->
+        <div class="absolute inset-0 opacity-10 bg-[url('https://images.unsplash.com/photo-1578575437130-527eed3abbec?q=80&w=1200')] bg-cover bg-center"></div>
+        
+        <div class="container mx-auto px-4 relative z-10 grid md:grid-cols-2 gap-12 items-center">
+            <!-- النصوص والأزرار -->
+            <div class="space-y-6 text-center md:text-right">
+                <span class="bg-blue-500/30 text-blue-200 px-4 py-1.5 rounded-full text-sm font-medium tracking-wide">بوابتك للتسوق العالمي والتوظيف</span>
+                <h1 class="text-4xl lg:text-5xl font-bold leading-tight">
+                    تسوق من الأسواق العالمي  ونحن نتولى الشحن لباب بيتك
+                </h1>
+                <p class="text-blue-100 text-lg max-w-xl mx-auto md:mx-0">
+                    نوفر لك خدمات الوساط  الكامل  للشراء من Amazon و Noon و AliExpress وتوصيل شحناتك محلياً ودولياً، بالإضاف  إلى بوابتنا المعتمد  للوظائف .
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start pt-2">
+                    <a href="#" class="bg-orange-500 text-white px-8 py-3.5 rounded-xl font-medium text-lg hover:bg-orange-600 transition shadow-lg text-center">ابدأ الشراء الآن</a>
+                    <a href="#" class="border-2 border-white/40 hover:border-white text-white px-8 py-3.5 rounded-xl font-medium text-lg transition text-center">استكشف الوظائف</a>
+                </div>
+            </div>
+            
+            <!-- صور  معبر  جانبي  لشاحنات وصناديق شحن -->
+            <div class="hidden md:block justify-self-center relative">
+                <div class="w-80 h-80 lg:w-96 lg:h-96 bg-blue-600/30 rounded-full absolute -top-4 -left-4 blur-2xl"></div>
+                <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=600" alt="Shipping and Logistics" class="rounded-2xl shadow-2xl border-4 border-white/10 relative z-10 object-cover w-full h-[400px]">
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. قسم الخدمات الأربع  لشراء وشحن المنتجات -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            
+            <!-- عنوان القسم -->
+            <div class="text-center max-w-2xl mx-auto mb-12">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">خدمات الشحن والتسوق العالمية</h2>
+                <p class="text-gray-600">نوفر لك حلولاً متكامل  للشراء من أشهر المتاجر العالمي  والشحن حتى باب منزلك بكل سهول  وأمان.</p>
+            </div>
+
+            <!-- شبك  البطاقات (Grid) -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                
+                <!-- بطاق  أمازون -->
+                <div class="border border-gray-100 rounded-2xl p-6 bg-gray-50/50 hover:bg-white hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between">
+                    <div>
+                        <div class="w-14 h-14 bg-amber-100 text-amber-600 rounded-xl flex items-center justify-center text-2xl mb-5">
+                            <i class="fa-brands fa-amazon"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">الشراء من Amazon</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed mb-4">
+                            تصفح أمازون الأمريكي أو البريطاني، أرسل لنا الروابط، وسنتولى الشراء، الدفع، وتخليص الشحن  لحسابك.
+                        </p>
+                    </div>
+                    <a href="#" class="text-amber-600 font-medium text-sm flex items-center gap-1 hover:gap-2 transition-all">
+                        اطلب الآن <i class="fa-solid fa-arrow-left text-xs"></i>
+                    </a>
+                </div>
+
+                <!-- بطاق  نون -->
+                <div class="border border-gray-100 rounded-2xl p-6 bg-gray-50/50 hover:bg-white hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between">
+                    <div>
+                        <div class="w-14 h-14 bg-yellow-100 text-yellow-600 rounded-xl flex items-center justify-center text-2xl mb-5">
+                            <i class="fa-solid fa-bag-shopping"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">الشراء من Noon</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed mb-4">
+                            نوفر لك وساط  شراء مرن  من متجر نون بمختلف فروعه مع الاستفاد  من العروض الحصري  وتوصيلها السريع.
+                        </p>
+                    </div>
+                    <a href="#" class="text-yellow-600 font-medium text-sm flex items-center gap-1 hover:gap-2 transition-all">
+                        اطلب الآن <i class="fa-solid fa-arrow-left text-xs"></i>
+                    </a>
+                </div>
+
+                <!-- بطاق  علي إكسبريس -->
+                <div class="border border-gray-100 rounded-2xl p-6 bg-gray-50/50 hover:bg-white hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between">
+                    <div>
+                        <div class="w-14 h-14 bg-orange-100 text-orange-600 rounded-xl flex items-center justify-center text-2xl mb-5">
+                            <i class="fa-solid fa-plane-departure"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">الشراء من AliExpress</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed mb-4">
+                            تسوّق بالجمل  أو التجزئ  من المصانع الصيني  مباشر  دون القلق من مشاكل الدفع أو الشحن الدولي المعقد.
+                        </p>
+                    </div>
+                    <a href="#" class="text-orange-600 font-medium text-sm flex items-center gap-1 hover:gap-2 transition-all">
+                        اطلب الآن <i class="fa-solid fa-arrow-left text-xs"></i>
+                    </a>
+                </div>
+
+                <!-- بطاق  الشحن الدولي والمحلي -->
+                <div class="border border-gray-100 rounded-2xl p-6 bg-gray-50/50 hover:bg-white hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between">
+                    <div>
+                        <div class="w-14 h-14 bg-blue-100 text-blue-600 rounded-xl flex items-center justify-center text-2xl mb-5">
+                            <i class="fa-solid fa-truck-fast"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">الشحن الدولي والمحلي</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed mb-4">
+                            لديك شحن  جاهز  بالفعل وتريد إرسالها؟ نقدم خدمات النقل البري والجوي والبحري بأسعار تنافسي  وتتبع حي.
+                        </p>
+                    </div>
+                    <a href="#" class="text-blue-600 font-medium text-sm flex items-center gap-1 hover:gap-2 transition-all">
+                        احسب التكلف  <i class="fa-solid fa-arrow-left text-xs"></i>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. قسم الشراك  ال   والفرص الوظيفي  المتاح  -->
+    <section class="py-16 bg-gray-50 border-t border-b border-gray-100">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- الجانب الأيمن: تفاصيل التعاقد الرسمي -->
+                <div class="lg:col-span-5 space-y-6 text-right">
+                    <div class="inline-flex items-center gap-2 bg-emerald-50 text-emerald-700 px-4 py-2 rounded-xl text-sm font-medium border border-emerald-100">
+                        <i class="fa-solid fa-building-shield"></i>
+                        <span>شراك  التي معتمد  لعرض الفرص الاعمال </span>
+                    </div>
+                    <h2 class="text-3xl font-bold text-gray-900 leading-tight">
+                        نساهم في تمكين الكفاءات الوطني  عبر منصتنا
+                    </h2>
+                    <p class="text-gray-600 leading-relaxed">
+                        بموجب تعاقدنا الرسمي والمباشر مع الجهات ال ة،وختص  وشركات نتشرف بكوننا منص  وسيط  وموثوق  لطرح وعرض فرص العمل والوظائف المتاح  لدى شركائنا، للمساهم  في دعم سوق العمل وتسهيل وصولك لوظيفتك المستقبلية.
+                    </p>
+                    <div class="pt-2">
+                        <a href="#" class="inline-flex items-center gap-2 bg-blue-600 text-white px-6 py-3 rounded-xl font-medium hover:bg-blue-700 transition shadow-md">
+                            <span>تصفح كاف  الوظائف المتاحة</span>
+                            <i class="fa-solid fa-arrow-left text-sm"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- الجانب الأيسر: نبذ  سريع  عن أحدث الوظائف المدرج  -->
+                <div class="lg:col-span-7 space-y-4">
+                    <h3 class="text-lg font-bold text-gray-700 mb-2 flex items-center gap-2">
+                        <i class="fa-solid fa-briefcase text-blue-600"></i>
+                        <span>أحدث الفرص الوظيفي  المدرج  حالياً:</span>
+                    </h3>
+
+                    <!-- وظيف  1 -->
+                    <div class="bg-white p-5 rounded-xl border border-gray-100 shadow-sm hover:shadow-md transition flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+                        <div>
+                            <span class="text-xs font-medium bg-blue-50 text-blue-600 px-2.5 py-1 rounded-md mb-2 inline-block">شركات  / تعاقد مباشر</span>
+                            <h4 class="text-lg font-bold text-gray-950">أخصائي خدمات لوجستي  وسلاسل إمداد</h4>
+                            <p class="text-gray-500 text-sm mt-1 flex items-center gap-4">
+                                <span><i class="fa-solid fa-location-dot ml-1"></i> الإدار  العامة</span>
+                                <span><i class="fa-solid fa-clock ml-1"></i> دوام كامل</span>
+                            </p>
+                        </div>
+                        <a href="#" class="text-blue-600 hover:text-blue-700 font-medium text-sm border border-blue-100 hover:border-blue-600 px-4 py-2 rounded-lg transition whitespace-nowrap">
+                            عرض التفاصيل
+                        </a>
+                    </div>
+
+                    <!-- وظيف  2 -->
+                    <div class="bg-white p-5 rounded-xl border border-gray-100 shadow-sm hover:shadow-md transition flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+                        <div>
+                            <span class="text-xs font-medium bg-emerald-50 text-emerald-600 px-2.5 py-1 rounded-md mb-2 inline-block">جه   الخاص  شريكة</span>
+                            <h4 class="text-lg font-bold text-gray-950">مسؤول خدم  عملاء وتتبع شحنات</h4>
+                            <p class="text-gray-500 text-sm mt-1 flex items-center gap-4">
+                                <span><i class="fa-solid fa-location-dot ml-1"></i> فرع المطار الدولي</span>
+                                <span><i class="fa-solid fa-clock ml-1"></i> دوام كامل</span>
+                            </p>
+                        </div>
+                        <a href="#" class="text-blue-600 hover:text-blue-700 font-medium text-sm border border-blue-100 hover:border-blue-600 px-4 py-2 rounded-lg transition whitespace-nowrap">
+                            عرض التفاصيل
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. تذييل الصفح  (Footer) -->
+    <footer class="bg-gray-900 text-gray-400 py-12 border-t border-gray-800">
+        <div class="container mx-auto px-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            
+            <!-- عن الشرك  الهوي  والتعريف -->
+            <div class="space-y-4">
+                <a href="#" class="text-2xl font-bold text-white flex items-center gap-2">
+                    <i class="fa-solid fa-ship text-orange-500"></i>
+                    <span>عالم<span class="text-blue-400">الشحن</span></span>
+                </a>
+                <p class="text-sm leading-relaxed">
+                    منصتك الأولى للوساط  في الشراء من المتاجر العالمي  والشحن الدولي والمحلي، بالإضاف  لكوننا الشريك المعتمد لعرض الفرص الوظيفي   وتسهيل التوظيف .
+                </p>
+            </div>
+
+            <!-- روابط التصفح السريع -->
+            <div class="space-y-3">
+                <h4 class="text-white font-bold text-lg">روابط سريعة</h4>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="#" class="hover:text-white transition">الرئيسية</a></li>
+                    <li><a href="#" class="hover:text-white transition">الخدمات العالمية</a></li>
+                    <li><a href="#" class="hover:text-white transition">البواب  الوظيفية</a></li>
+                    <li><a href="#" class="hover:text-white transition">من نحن</a></li>
+                </ul>
+            </div>
+
+            <!-- تصنيفات الخدمات -->
+            <div class="space-y-3">
+                <h4 class="text-white font-bold text-lg">خدمات الشراء</h4>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="#" class="hover:text-white transition">الشراء من Amazon</a></li>
+                    <li><a href="#" class="hover:text-white transition">الشراء من Noon</a></li>
+                    <li><a href="#" class="hover:text-white transition">الشراء من AliExpress</a></li>
+                    <li><a href="#" class="hover:text-white transition">الشحن الدولي والمحلي</a></li>
+                </ul>
+            </div>
+
+            <!-- معلومات التواصل والدعم الفني -->
+            <div class="space-y-3">
+                <h4 class="text-white font-bold text-lg">اتصل بنا</h4>
+                <p class="text-sm">لديك استفسار؟ فريقنا في خدمتك على مدار الساعة.</p>
+                <p class="text-white font-medium text-sm flex items-center gap-2">
+                    <i class="fa-solid fa-phone text-orange-500"></i> <span>92000XXXX</span>
+                </p>
+                <div class="flex gap-4 pt-2 text-lg">
+                    <a href="#" class="hover:text-white transition"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="#" class="hover:text-white transition"><i class="fa-brands fa-linkedin"></i></a>
+                    <a href="#" class="hover:text-white transition"><i class="fa-brands fa-instagram"></i></a>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- حقوق الملكي  -->
+        <div class="container mx-auto px-4 mt-12 pt-6 border-t border-gray-800 text-center text-xs">
+            <p>جميع الحقوق محفوظ  © 2026 عالم الشحن.</p>
+        </div>
+    </footer>
+
+    <!-- جافاسكريبت متجاوب للتحكم بالقائم  عند الضغط عليها بالهاتف -->
+    <script>
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>
+
